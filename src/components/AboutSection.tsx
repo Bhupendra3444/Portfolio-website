@@ -12,17 +12,6 @@ const educationData = {
 
 const experienceData = [
   {
-    title: "Software Engineer",
-    company: "Brilliantryx.Solutions",
-    location: "Ghaziabad",
-    duration: "Nov 2024 – Dec 2024",
-    achievements: [
-      "Optimized website performance, reducing load times by 40% (from 5s to 2s)",
-      "Improved user experience leading to 25% increase in user engagement",
-      "Redesigned UI components ensuring 100% responsiveness across devices"
-    ]
-  },
-  {
     title: "Backend Intern",
     company: "PMA Solutions Pvt. Ltd.",
     location: "Remote",
@@ -131,10 +120,10 @@ export const AboutSection = () => {
             <Wand2 className="w-8 h-8 text-primary inline mr-3" />
             Magical Experience
           </h3>
-          
+
           {experienceData.map((exp, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="bg-card/80 backdrop-blur-sm mystical-shadow magical-fade-in"
               style={{ animationDelay: `${index * 0.3}s` }}
             >

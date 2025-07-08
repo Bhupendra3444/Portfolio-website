@@ -11,7 +11,7 @@ const spellsAndPotions = [
     technologies: ["React.js", "Material-UI", "Firebase", "Cryptocurrency APIs"],
     achievements: [
       "95% user satisfaction rate",
-      "40% increase in app usage", 
+      "40% increase in app usage",
       "500+ users with personalized watchlists"
     ],
     liveUrl: "https://ancrypt.onrender.com/",
@@ -31,6 +31,34 @@ const spellsAndPotions = [
     liveUrl: "https://kiet-mun.vercel.app/",
     githubUrl: "https://github.com/Bhupendra3444/KIET-MUN",
     type: "KIETMUN Website"
+  },
+  {
+    title: "Student Feedback System",
+    description: "A full-stack student feedback portal built with PHP, MySQL, and CSS, enabling students to securely submit course feedback online with admin login and session-based access control.",
+    image: "https://images.unsplash.com/photo-1584697964154-9433b8020f9b?w=400&h=250&fit=crop",
+    technologies: ["PHP", "MySQL", "CSS", "XAMPP"],
+    achievements: [
+      "Secure session-managed admin login system",
+      "Deployed on localhost using Apache (XAMPP)",
+      "User-friendly feedback submission interface"
+    ],
+    liveUrl: "#", // Localhost project — no public live URL
+    githubUrl: "https://github.com/Bhupendra3444/Feedback-System",
+    type: "Feedback System"
+  },
+  {
+    title: "Harry Potter-Themed Portfolio Website",
+    description: "A magical fullstack portfolio website using React.js, shadcn/ui, Tailwind CSS, and Lucide Icons to showcase projects, skills, and experience in an immersive Harry Potter theme.",
+    image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&h=250&fit=crop",
+    technologies: ["React.js", "Tailwind CSS", "shadcn/ui", "Lucide Icons"],
+    achievements: [
+      "100% Lighthouse scores in performance, accessibility, SEO",
+      "40% boost in recruiter interactions",
+      "Smooth navigation with modular reusable components"
+    ],
+    liveUrl: "https://portfolio-website-bhupendra-upadhyays-projects.vercel.app/",
+    githubUrl: "https://github.com/Bhupendra3444/Portfolio-website",
+    type: "Portfolio Website"
   }
 ];
 
@@ -53,14 +81,14 @@ export const ProjectsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {spellsAndPotions.map((project, index) => (
-            <Card 
+            <Card
               key={project.title}
               className="bg-card/80 backdrop-blur-sm mystical-shadow hover:shadow-magical transition-all duration-300 group magical-fade-in overflow-hidden"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="relative overflow-hidden">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
@@ -69,18 +97,18 @@ export const ProjectsSection = () => {
                   {project.type}
                 </Badge>
               </div>
-              
+
               <CardHeader>
                 <CardTitle className="font-magical text-xl group-hover:text-primary transition-colors">
                   {project.title}
                 </CardTitle>
               </CardHeader>
-              
+
               <CardContent className="space-y-4">
                 <p className="font-parchment text-muted-foreground leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
                     <Badge key={tech} variant="outline" className="text-xs">
@@ -88,7 +116,7 @@ export const ProjectsSection = () => {
                     </Badge>
                   ))}
                 </div>
-                
+
                 <div className="flex gap-3 pt-2">
                   <a
                     href={project.liveUrl}
@@ -96,7 +124,7 @@ export const ProjectsSection = () => {
                     rel="noopener noreferrer"
                     className="flex-1"
                   >
-                    <Button size="sm" className="w-full">
+                    <Button size="sm" className="w-full" disabled={project.liveUrl === "#"}>
                       <ExternalLink className="w-3 h-3 mr-2" />
                       View Magic
                     </Button>
